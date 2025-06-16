@@ -17,5 +17,5 @@ You can use any text editor or IDE. Popular choices include IntelliJ IDEA, Eclip
 git clone https://github.com/Sasank-5716/Java-Basics
 ```
 ```bash
-cd Java Basics
+cd Java
 ```
