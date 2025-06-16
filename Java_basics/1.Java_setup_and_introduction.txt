@@ -1,0 +1,37 @@
+Java Development Kit (JDK):
+
+The JDK is a software development environment used to develop Java applications. It includes the Java Runtime Environment (JRE), an interpreter/loader (Java), a compiler (javac), an archiver (jar), and other tools.
+
+Java Runtime Environment (JRE):
+
+The JRE provides libraries, Java Virtual Machine (JVM), and other components to run applications written in Java.
+
+Java Virtual Machine (JVM):
+
+JVM is an abstract machine that enables your computer to run Java programs. It converts bytecode into machine code.
+
+Integrated Development Environment (IDE):
+
+IDEs like Eclipse and IntelliJ IDEA provide tools to write, compile, debug, and run Java code efficiently.
+
+Step 1: Installing Java JDK
+Download the latest JDK from Oracle's official website or use OpenJDK.
+
+Install it on your system and set the environment variable JAVA_HOME (optional but recommended).
+
+Step 2: Setting up an IDE
+Download and install Eclipse or IntelliJ IDEA Community Edition.
+
+Create a new Java project.
+
+Step 3: Writing your first Java program
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+Save as HelloWorld.java.
+
+Compile: javac HelloWorld.java
+
+Run: java HelloWorld

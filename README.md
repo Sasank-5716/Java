@@ -1,4 +1,4 @@
-# Java Basics README
+# Java Basics 
 Welcome to the Java Basics project! This repository is designed to help beginners learn the fundamental concepts of the Java programming language. Whether you are new to programming or transitioning from another language, this guide will provide you with the essential knowledge and practical examples to get started with Java.
 
 ## Introduction
