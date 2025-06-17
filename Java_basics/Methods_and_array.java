@@ -29,7 +29,19 @@ int[][] matrix = new int[3][3]; // 2D array
 */
 
 public class Methods_and_array {
-    public static void main(String[] args) {
-       
+    // Method to calculate sum of array elements
+        static int sumArray(int[] arr) {
+            int sum = 0;
+            for (int num : arr) {
+                sum += num;
+            }
+            return sum;
+        }
+    
+        public static void main(String[] args) {
+            int[] numbers = {1, 2, 3, 4, 5};
+            System.out.println("Sum: " + sumArray(numbers));
+        }
     }
-}
+ 
+
