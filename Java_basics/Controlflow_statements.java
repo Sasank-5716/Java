@@ -23,3 +23,20 @@ continue: skips current iteration.
 
 return: exits a method.
 */
+
+public class Controlflow_statements {
+    public static void main(String[] args) {
+        int number = 5;
+
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+
+        System.out.println("Counting from 1 to 5:");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
