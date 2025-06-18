@@ -50,6 +50,18 @@ class Animal {
     }
 }
 
+// Inheritance and Polymorphism
+class Dog extends Animal {
+    Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    void speak() {
+        System.out.println(name + " barks.");
+    }
+}
+
 public class OOP_fundamentals {
     public static void main(String[] args) {
     
