@@ -64,6 +64,9 @@ class Dog extends Animal {
 
 public class OOP_fundamentals {
     public static void main(String[] args) {
-    
+        Animal a = new Animal("Generic Animal");
+        Dog d = new Dog("Buddy");
+        a.speak();
+        d.speak();
     }
 }
