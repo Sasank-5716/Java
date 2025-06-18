@@ -35,6 +35,23 @@ private: Accessible only within the class.
 protected: Accessible within the package and subclasses.
 Default (no modifier): Accessible within the package.
  */
+
+ // Class definition
+class Animal {
+    String name;
+
+    // Constructor
+    Animal(String name) {
+        this.name = name;
+    }
+
+    void speak() {
+        System.out.println(name + " makes a sound.");
+    }
+}
+
 public class OOP_fundamentals {
+    public static void main(String[] args) {
     
+    }
 }
