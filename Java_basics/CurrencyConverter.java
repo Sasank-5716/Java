@@ -18,7 +18,7 @@ public class CurrencyConverter {
 
         double conversionRate = 0;
 
-         switch (fromCurrency) {
+        switch (fromCurrency) {
             case "USD":
                 switch (toCurrency) {
                     case "EUR":
@@ -36,7 +36,7 @@ public class CurrencyConverter {
                 }
                 break;
 
-                case "EUR":
+            case "EUR":
                 switch (toCurrency) {
                     case "USD":
                         conversionRate = 1.08; // EUR to USD
@@ -52,7 +52,7 @@ public class CurrencyConverter {
                         return;
                 }
                 break;
-                case "INR":
+            case "INR":
                 switch (toCurrency) {
                     case "USD":
                         conversionRate = 0.012; // INR to USD
@@ -71,7 +71,8 @@ public class CurrencyConverter {
             default:
                 System.out.println("Invalid source currency.");
                 return;
-            }
+        }
+        double convertedAmount = amount * conversionRate;
+        System.out.println("Converted amount: " + convertedAmount + " " + toCurrency);
     }
 }
-
