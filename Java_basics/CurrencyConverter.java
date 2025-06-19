@@ -17,6 +17,25 @@ public class CurrencyConverter {
         String toCurrency = scanner.next().toUpperCase();
 
         double conversionRate = 0;
+
+         switch (fromCurrency) {
+            case "USD":
+                switch (toCurrency) {
+                    case "EUR":
+                        conversionRate = 0.92; // USD to EUR
+                        break;
+                    case "INR":
+                        conversionRate = 82.75; // USD to INR
+                        break;
+                    case "USD":
+                        conversionRate = 1.0;
+                        break;
+                    default:
+                        System.out.println("Invalid target currency.");
+                        return;
+                }
+                break;
+            }
     }
 }
 
