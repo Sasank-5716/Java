@@ -35,6 +35,23 @@ public class CurrencyConverter {
                         return;
                 }
                 break;
+
+                case "EUR":
+                switch (toCurrency) {
+                    case "USD":
+                        conversionRate = 1.08; // EUR to USD
+                        break;
+                    case "INR":
+                        conversionRate = 89.65; // EUR to INR
+                        break;
+                    case "EUR":
+                        conversionRate = 1.0;
+                        break;
+                    default:
+                        System.out.println("Invalid target currency.");
+                        return;
+                }
+                break;
             }
     }
 }
