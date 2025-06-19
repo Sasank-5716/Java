@@ -12,7 +12,11 @@ public class CurrencyConverter {
         System.out.print("Enter the currency to convert from (USD, EUR, INR): ");
         String fromCurrency = scanner.next().toUpperCase();
 
-    
+        // Input the target currency
+        System.out.print("Enter the currency to convert to (USD, EUR, INR): ");
+        String toCurrency = scanner.next().toUpperCase();
+
+        double conversionRate = 0;
     }
 }
 
