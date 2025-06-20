@@ -143,6 +143,20 @@ public class StudentManagementSystem {
                     manager.deleteStudent(deleteId); 
                     break;
 
+                case 5: // Search Student
+                    System.out.print("Enter student name to search: ");
+                    String searchName = scanner.nextLine();
+                    manager.searchStudent(searchName); // <-- UPDATED
+                    break;
+                    
+                case 6: // Exit
+                    System.out.println("Exiting program. Goodbye!");
+                    scanner.close();
+                    System.exit(0);
+                    
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+
             }
         }
     }
