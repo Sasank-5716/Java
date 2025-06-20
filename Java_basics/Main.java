@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 // Student class to store student data
 class Student {
@@ -28,10 +29,11 @@ class Student {
 
 class Student_management_system {
     private List<Student> students = new ArrayList<>();
+    private int nextId = 1;
 
-    // Add a new student
-    public void addStudent(Student student) {
-        students.add(student);
+    public void addStudent(String name, String grade) { 
+        students.add(new Student(nextId++, name, grade)); 
+        System.out.println("Student added successfully!"); 
     }
 
     // View all students
@@ -43,16 +45,16 @@ class Student_management_system {
         }
     }
         // Update a student's details by ID
-    public void updateStudent(int id, String newName, String newGrade) {
+    public void updateStudent(int id, String newName, String newGrade) { 
         for (Student s : students) {
             if (s.getId() == id) {
-                s.setName(newName);
-                s.setGrade(newGrade);
-                System.out.println("Student updated.");
+                s.setName(newName); 
+                s.setGrade(newGrade); 
+                System.out.println("Student updated successfully!"); 
                 return;
             }
         }
-        System.out.println("Student with ID " + id + " not found.");
+        System.out.println("Error: Student with ID " + id + " not found."); 
     }
 
     // Delete a student by ID
