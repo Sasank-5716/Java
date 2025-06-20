@@ -93,4 +93,14 @@ public class Main {
         sms.updateStudent(2, "Robert", "A+");
         System.out.println("\nAfter updating Bob's details:");
         sms.viewStudents();
+
+        // Search for a student by name
+        System.out.println("\nSearching for Ramesh:");
+        Student foundStudent = sms.searchStudentByName("Ramesh");
+        System.out.println(foundStudent != null ? foundStudent : "Student not found.");
+
+        // Delete a student
+        sms.deleteStudent(1);
+        System.out.println("\nAfter deleting Alice:");
+        sms.viewStudents();
     }}
