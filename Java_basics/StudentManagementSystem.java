@@ -40,7 +40,7 @@ class Student {
     }
 }
 
-class Student_management_system {
+class StudentManager {
     private List<Student> students = new ArrayList<>();
     private int nextId = 1;
 
@@ -94,33 +94,11 @@ class Student_management_system {
 }
 
 // Main class to run the program
-public class Main {
+public class StudentManagementSystem {
     public static void main(String[] args) {
-        Student_management_system sms = new Student_management_system();
+         Scanner scanner = new Scanner(System.in); 
+        StudentManager manager = new StudentManager(); 
 
-        // Sample students
-        sms.addStudent(new Student(1, "Alice", "A"));
-        sms.addStudent(new Student(2, "Bob", "B"));
-        sms.addStudent(new Student(3, "Ramesh", "B+"));
-        sms.addStudent(new Student(4, "Sanjay", "A-"));
-
-        // Display all students
-        System.out.println("Students List:");
-        sms.viewStudents();
-
-        // Update a student's details
-        sms.updateStudent(2, "Robert", "A+");
-        System.out.println("\nAfter updating Bob's details:");
-        sms.viewStudents();
-
-        // Search for a student by name
-        System.out.println("\nSearching for Ramesh:");
-        Student foundStudent = sms.searchStudentByName("Ramesh");
-        System.out.println(foundStudent != null ? foundStudent : "Student not found.");
-
-        // Delete a student
-        sms.deleteStudent(1);
-        System.out.println("\nAfter deleting Alice:");
-        sms.viewStudents();
+        
     }
 }
