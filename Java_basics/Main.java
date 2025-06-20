@@ -41,7 +41,7 @@ class Student_management_system {
         } else {
             students.forEach(System.out::println);
         }
-
+    }
         // Update a student's details by ID
     public void updateStudent(int id, String newName, String newGrade) {
         for (Student s : students) {
@@ -73,5 +73,15 @@ class Student_management_system {
         }
         return null;
     }
-}}
+}
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        Student_management_system sms = new Student_management_system();
 
+        // Sample students
+        sms.addStudent(new Student(1, "Alice", "A"));
+        sms.addStudent(new Student(2, "Bob", "B"));
+        sms.addStudent(new Student(3, "Ramesh", "B+"));
+        sms.addStudent(new Student(4, "Sanjay", "A-"));
+    }}
