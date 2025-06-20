@@ -14,12 +14,25 @@ class Student {
         this.grade = grade;
     }
 
-    public int getId() { return id; }
-    public String getName() { return name; }
-    public String getGrade() { return grade; }
+    public int getId() {
+        return id;
+    }
 
-    public void setName(String name) { this.name = name; }
-    public void setGrade(String grade) { this.grade = grade; }
+    public String getName() {
+        return name;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 
     @Override
     public String toString() {
@@ -31,9 +44,9 @@ class Student_management_system {
     private List<Student> students = new ArrayList<>();
     private int nextId = 1;
 
-    public void addStudent(String name, String grade) { 
-        students.add(new Student(nextId++, name, grade)); 
-        System.out.println("Student added successfully!"); 
+    public void addStudent(String name, String grade) {
+        students.add(new Student(nextId++, name, grade));
+        System.out.println("Student added successfully!");
     }
 
     // View all students
@@ -44,38 +57,42 @@ class Student_management_system {
             students.forEach(System.out::println);
         }
     }
-        // Update a student's details by ID
-    public void updateStudent(int id, String newName, String newGrade) { 
+
+    // Update a student's details by ID
+    public void updateStudent(int id, String newName, String newGrade) {
         for (Student s : students) {
             if (s.getId() == id) {
-                s.setName(newName); 
-                s.setGrade(newGrade); 
-                System.out.println("Student updated successfully!"); 
+                s.setName(newName);
+                s.setGrade(newGrade);
+                System.out.println("Student updated successfully!");
                 return;
             }
         }
-        System.out.println("Error: Student with ID " + id + " not found."); 
+        System.out.println("Error: Student with ID " + id + " not found.");
     }
 
-    // Delete a student by ID
-    public void deleteStudent(int id) {
-        boolean removed = students.removeIf(s -> s.getId() == id);
-        if (removed) {
-            System.out.println("Student deleted.");
+    public void deleteStudent(int id) { // <-- UPDATED
+        if (students.removeIf(s -> s.getId() == id)) { // <-- UPDATED
+            System.out.println("Student deleted successfully!"); // <-- UPDATED
         } else {
-            System.out.println("Student with ID " + id + " not found.");
+            System.out.println("Error: Student with ID " + id + " not found."); // <-- UPDATED
         }
     }
-       // Search student by name
-    public Student searchStudentByName(String name) {
-        for (Student s : students) {
-            if (s.getName().equalsIgnoreCase(name)) {
-                return s;
-            }
+
+    public void searchStudent(String name) { // <-- UPDATED
+        List<Student> results = students.stream()
+                .filter(s -> s.getName().equalsIgnoreCase(name))
+                .toList();
+
+        if (results.isEmpty()) {
+            System.out.println("No students found with name: " + name); // <-- UPDATED
+        } else {
+            System.out.println("\n--- SEARCH RESULTS ---");
+            results.forEach(System.out::println);
         }
-        return null;
     }
 }
+
 // Main class to run the program
 public class Main {
     public static void main(String[] args) {
@@ -87,7 +104,7 @@ public class Main {
         sms.addStudent(new Student(3, "Ramesh", "B+"));
         sms.addStudent(new Student(4, "Sanjay", "A-"));
 
-          // Display all students
+        // Display all students
         System.out.println("Students List:");
         sms.viewStudents();
 
@@ -105,4 +122,5 @@ public class Main {
         sms.deleteStudent(1);
         System.out.println("\nAfter deleting Alice:");
         sms.viewStudents();
-    }}
+    }
+}
