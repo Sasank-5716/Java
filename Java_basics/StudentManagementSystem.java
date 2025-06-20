@@ -96,10 +96,10 @@ class StudentManager {
 // Main class to run the program
 public class StudentManagementSystem {
     public static void main(String[] args) {
-         Scanner scanner = new Scanner(System.in); 
-        StudentManager manager = new StudentManager(); 
+        Scanner scanner = new Scanner(System.in);
+        StudentManager manager = new StudentManager();
 
-        while (true) { 
+        while (true) {
             System.out.println("\n--- STUDENT MANAGEMENT SYSTEM ---");
             System.out.println("1. Add Student");
             System.out.println("2. View All Students");
@@ -108,9 +108,24 @@ public class StudentManagementSystem {
             System.out.println("5. Search Student by Name");
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
-            
-            int choice = scanner.nextInt(); 
-            scanner.nextLine();  
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1: // Add Student
+                    System.out.print("Enter student name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Enter student grade: ");
+                    String grade = scanner.nextLine();
+                    manager.addStudent(name, grade); // <-- UPDATED
+                    break;
+
+                case 2: // View Students
+                    manager.viewStudents();
+                    break;
+
+            }
         }
     }
 }
