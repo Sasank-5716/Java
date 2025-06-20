@@ -41,4 +41,27 @@ class Student_management_system {
         } else {
             students.forEach(System.out::println);
         }
-    }}
+
+        // Update a student's details by ID
+    public void updateStudent(int id, String newName, String newGrade) {
+        for (Student s : students) {
+            if (s.getId() == id) {
+                s.setName(newName);
+                s.setGrade(newGrade);
+                System.out.println("Student updated.");
+                return;
+            }
+        }
+        System.out.println("Student with ID " + id + " not found.");
+    }
+
+    // Delete a student by ID
+    public void deleteStudent(int id) {
+        boolean removed = students.removeIf(s -> s.getId() == id);
+        if (removed) {
+            System.out.println("Student deleted.");
+        } else {
+            System.out.println("Student with ID " + id + " not found.");
+        }
+    }
+}
