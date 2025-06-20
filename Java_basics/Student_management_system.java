@@ -64,4 +64,14 @@ class Student_management_system {
             System.out.println("Student with ID " + id + " not found.");
         }
     }
-}
+       // Search student by name
+    public Student searchStudentByName(String name) {
+        for (Student s : students) {
+            if (s.getName().equalsIgnoreCase(name)) {
+                return s;
+            }
+        }
+        return null;
+    }
+}}
+
