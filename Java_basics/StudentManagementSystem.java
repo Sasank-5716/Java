@@ -71,21 +71,21 @@ class StudentManager {
         System.out.println("Error: Student with ID " + id + " not found.");
     }
 
-    public void deleteStudent(int id) { // <-- UPDATED
-        if (students.removeIf(s -> s.getId() == id)) { // <-- UPDATED
-            System.out.println("Student deleted successfully!"); // <-- UPDATED
+    public void deleteStudent(int id) { 
+        if (students.removeIf(s -> s.getId() == id)) {
+            System.out.println("Student deleted successfully!"); 
         } else {
-            System.out.println("Error: Student with ID " + id + " not found."); // <-- UPDATED
+            System.out.println("Error: Student with ID " + id + " not found."); 
         }
     }
 
-    public void searchStudent(String name) { // <-- UPDATED
+    public void searchStudent(String name) { 
         List<Student> results = students.stream()
                 .filter(s -> s.getName().equalsIgnoreCase(name))
                 .toList();
 
         if (results.isEmpty()) {
-            System.out.println("No students found with name: " + name); // <-- UPDATED
+            System.out.println("No students found with name: " + name); 
         } else {
             System.out.println("\n--- SEARCH RESULTS ---");
             results.forEach(System.out::println);
@@ -118,11 +118,29 @@ public class StudentManagementSystem {
                     String name = scanner.nextLine();
                     System.out.print("Enter student grade: ");
                     String grade = scanner.nextLine();
-                    manager.addStudent(name, grade); // <-- UPDATED
+                    manager.addStudent(name, grade); 
                     break;
 
                 case 2: // View Students
                     manager.viewStudents();
+                    break;
+
+                 case 3: // Update Student
+                    System.out.print("Enter student ID to update: ");
+                    int updateId = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Enter new name: ");
+                    String newName = scanner.nextLine();
+                    System.out.print("Enter new grade: ");
+                    String newGrade = scanner.nextLine();
+                    manager.updateStudent(updateId, newName, newGrade);
+                    break;
+                    
+                case 4: // Delete Student
+                    System.out.print("Enter student ID to delete: ");
+                    int deleteId = scanner.nextInt();
+                    scanner.nextLine();
+                    manager.deleteStudent(deleteId); 
                     break;
 
             }
