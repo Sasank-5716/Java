@@ -84,4 +84,13 @@ public class Main {
         sms.addStudent(new Student(2, "Bob", "B"));
         sms.addStudent(new Student(3, "Ramesh", "B+"));
         sms.addStudent(new Student(4, "Sanjay", "A-"));
+
+          // Display all students
+        System.out.println("Students List:");
+        sms.viewStudents();
+
+        // Update a student's details
+        sms.updateStudent(2, "Robert", "A+");
+        System.out.println("\nAfter updating Bob's details:");
+        sms.viewStudents();
     }}
