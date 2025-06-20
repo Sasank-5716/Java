@@ -26,6 +26,19 @@ class Student {
     }
 }
 
-public class Student_management_system {
-    
-}
+class Student_management_system {
+    private List<Student> students = new ArrayList<>();
+
+    // Add a new student
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    // View all students
+    public void viewStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students found.");
+        } else {
+            students.forEach(System.out::println);
+        }
+    }}
